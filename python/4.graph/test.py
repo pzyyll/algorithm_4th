@@ -1,6 +1,6 @@
 
 def ParseGraphVertexEdge(file):
-    with open('graph.in', 'r') as fw:
+    with open(file, 'r') as fw:
         read_data = fw.read()
         res = read_data.splitlines(False)
 
@@ -17,6 +17,6 @@ def ParseGraphVertexEdge(file):
 
         return v, edges
 
-
-v, edges = ParseGraphVertexEdge('graph.in')
-print(v, edges)
+if __name__ == '__main__':
+    v, edges = ParseGraphVertexEdge('graph.in')
+    print(v, edges)

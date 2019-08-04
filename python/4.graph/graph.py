@@ -13,11 +13,19 @@ class Graph(object):
         self._adj = [[] for _ in range(self.v)]
 
     def addEdge(self, v, w):
+        if v > self.v or w > self.v:
+            return
+
+        if w in self._adj[v]:
+            return
+
         self._adj[v].append(w)
         self._adj[w].append(v)
         self.e += 1
 
     def adj(self, v):
+        if v > self.v:
+            raise Exception('limit v')
         return self._adj[v]
 
     def toString(self):
