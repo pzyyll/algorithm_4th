@@ -7,13 +7,18 @@ from graph import Graph
 
 class DFS_ForAverageDegree(object):
 	def __init__(self, g, s):
+		''' 在图中找到以 s 为起点，间隔度数均等的所有点
+		:param g:
+		:param s:
+		'''
+
 		self._marked = [False for _ in range(g.v)]
 		self._points = [s,]
 		self._except = set([])
 		self._g = g
 		self._s = s
 		self._sp = SPNoraml(g)
-		self._distLimit = (12,13)
+		self._distLimit = (1,2)  # 间隔度数的下限，上限
 
 		self._dfs(g, s)
 
